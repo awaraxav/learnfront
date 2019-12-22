@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>使用绝对定位实现拉手网的效果</title>
+
+    <style>
+        /* 第一步：清除外边距和内填充的样式 */
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        .box{
+            width: 700px;
+            height: 440px;
+            border: 1px solid #000;
+            margin: 100px auto;
+            /* 相对定位:此处纯粹是为了让其子元素能够参照自身进行定位，从而设置相对定位属性 */
+            position: relative;
+        }
+        .box span{
+            /* 绝对定位 */
+            position: absolute;
+            left: 20px;
+            top: -20px;
+        }
+
+    </style>
+
+</head>
+<body>
+    <!-- 快捷写法：div.box>span+div -->
+    <div class="box">
+        <span><img src="./image/absolut1.png"></span>
+        <div><img src="./image/absolut2.jpg"></div>
+    </div>
+</body>
+</html>

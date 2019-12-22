@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!--1.导入Vue的包-->
+    <script src="./lib/vue2.6.10.js"></script>
+</head>
+
+<body>
+    <!-- 2. 创建一个要控制的区域 -->
+    <div id="app">
+        <p v-for="(user, i) in list">ID: {{user.id}} --- 名字：{{user.name}} --- 索引：{{i}} </p>
+
+    </div>
+
+    <script>
+        // 3.创建一个Vue的实例
+        //   当我们导入Vue的包之后，在浏览器的内存中就多了一个 Vue 的构造函数
+        var vm = new Vue({
+            el: '#app',  // 表示，当前我们 new 的这个 Vue 的实例，要控制页面上的哪个区域。
+            data: {     // data 属性中，存放的是 el 中要用到的数据
+                // 定义一个对象数组
+                list: [
+                    { id: 1, name: 'zs1' },
+                    { id: 2, name: 'zs2' },
+                    { id: 3, name: 'zs3' },
+                    { id: 4, name: 'zs4' }
+                ]
+            },
+            methods: {}
+
+        })
+    </script>
+</body>
+
+</html>

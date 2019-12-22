@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        /* 第一步给body标签设置样式：字体大小和颜色 */
+        body{
+            font-size: 12px;
+            color: #f60;
+        }
+        /* 第二步：设置box的样式：盒子宽度、边框、在屏幕界面居中 */
+        .box{
+            width: 400px;
+            border: 1px solid #00f;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        /* 第三步：设置标题属性：设置h2的高度（非字体高）和行高，注意：高度=行高时，文字垂直方向居中 */
+        .box h2{
+            height: 35px;
+            line-height: 35px;
+            color: gold;
+        }
+        /* 第四步：设置列表的图标。注意：无序列表前面的图标，是通过背景样式实现的 */
+        .box ul li{
+            /* 去除li前面的项目符号 */
+            list-style: none;
+            height: 30px;
+            line-height: 30px;
+            border: 1px solid #ccc;
+            /* 给每一个li标签设置一个背景图片（小箭头） */
+            background-image: url(./image/list2.png);
+            /* 设置背景图片不延展平铺 */
+            background-repeat: no-repeat;
+            /* 背景图片的位置在最左边，垂直居中 */
+            background-position: left center;
+            /* 左内填充: 盒子里面的内容到左边边框线的距离 */
+            padding-left: 35px;
+        }
+        /* 第五步：对超级链接进行美化 */
+        a:link, a:visited{
+            color: #444;
+            text-decoration: none;
+        }
+        a:hover{
+            color: #f00;
+        }
+
+    </style>
+
+
+</head>
+<body>
+    
+    <!-- 骨架的快捷写法: div.box>h2+ul>li*5>a    运用 alt + 左键，选中多处同时书写  -->
+
+    <div class="box">
+        <h2>新闻列表</h2>
+        <ul>
+            <li><a href="#">新闻内容点击查看</a></li>
+            <li><a href="#">新闻内容点击查看</a></li>
+            <li><a href="#">新闻内容点击查看</a></li>
+            <li><a href="#">新闻内容点击查看</a></li>
+            <li><a href="#">新闻内容点击查看</a></li>
+        </ul>
+    </div>
+
+
+</body>
+</html>

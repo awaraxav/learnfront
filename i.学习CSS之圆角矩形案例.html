@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>圆角矩形的两个案例</title>
+    <style>
+        body{
+            background-color: #ccc;
+        }
+        .more{
+            /* 盒子样式的常用操作1是：画盒子的宽高、背景颜色、外边距 */
+            width: 60px;
+            height: 20px;
+            background-color: #fff;
+            margin: 100px auto;
+            /* 常用操作2：定义其中各子元素的字体居中、行高 */
+            text-align: center;
+            line-height: 20px;
+            /* 常用操作3：定义盒子为圆角矩形 椭圆形 */
+            border-radius: 10px;
+            font-size: 12px;
+            font-family: "微软雅黑";
+
+            /* 此处border是调试时用，便于确定盒子边界 */
+            /* border: 1px solid #000; */
+        }
+
+
+        .more a{
+            /* 对链接的常用操作1：定义为块级元素，从而设置宽高和圆角属性 */
+            display: block;
+            width: 60px;
+            height: 20px;
+            border-radius: 10px;
+        }
+
+        .more a:link, a:visited{
+            /* 对链接的常用操作2：同时设置正常/访问后状态的颜色，并取消下划线 */
+            color: #000;
+            text-decoration: none;
+        }
+        .more a:hover{
+            /* 对链接的常用操作3：设置悬停状态的颜色，以及字体颜色 */
+            background-color: #FFA500;
+            color: #fff;
+        }
+
+
+        /* 此处是针对图片的实例 */
+        .tupian{
+            width: 440px;
+            height:440px;
+            margin: 0px auto;
+            /* 此处border是调试时用，便于确定盒子边界 */
+            /* border: 1px solid #000; */
+        }
+        .tupian img{
+            width: 440px;
+            height: 440px;
+            /* 画圆形 */
+            border-radius: 50%;
+        }
+
+
+
+    </style>
+
+</head>
+<body>
+    <div class="more"><a href="#">更多></a></div>
+
+    <div class="tupian"><img src="./image/absolut2.jpg" alt=""></div>
+
+
+</body>
+</html>

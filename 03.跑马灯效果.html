@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <!-- 1. 导入 Vue 的包 -->
+    <script src="./lib/vue2.6.10.js"></script>
+</head>
+<body>
+    
+    <!-- 2. 创建一个要控制的区域 -->
+    <div id="app">
+        <input type="button" value="别浪" @click="lang">
+        <input type="button" value="低调" @click="stop">
+        <h4>{{ msg }}</h4>
+    </div>
+
+    <!-- 3. 定义 Vue 实例 -->
+
+    <script>
+
+        // 在vm实例中，要调用内部的数据或方法，应通过 this.属性名 或 this.方法名来进行访问。
+        // 在vm实例中，会自动监听data中所有数据的改变，只要数据发生变化，就会自动把最新的数据同步到页面中。【好处：程序员只需关心数据，而不需考虑如何重新渲染DOM页面】
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                
+                msg: '猥琐发育，别浪！！',
+
+                intervalId: null // 为了便于在全局控制定时器，在data 上定义这个定时器的id
+
+            },
+
+            methods: {
+                // lang() 是 lang: function() 的简写;
+                lang(){
+                    
+                    // 注意：1.this是个特殊变量，永远指向当前对象，若对象定义了一个用了this的函数，则在调用该对象的这个函数时，必须采用 obj.该函数()的格式；  2.在对象定义中，this若在第一层函数内部，则能够实现指向该定义的对象，但在第二层函数（嵌套函数）中，则将指向undefined，解决方法有以下两个：
+                    // A.箭头函数：除了有简写的作用之外，还可以将函数（外）的函数（内）中的this指针，能够指向外函数。
+                    // B.hack：首先在lang函数下定义一个that（或_this）中间变量指针,内函数（非箭头函数）用that指针。
+
+                    // 為了在全局引用这个定时器，需要添加该定时器的变量（句柄？），排除只能局部引用的var型，因此用obj.xx的格式，同时将该句柄变量存在data中，data作为mvvm的m层（第一个m），能够保存数据。
+
+                    if(this.intervalId != null) return;
+
+                    this.intervalId = setInterval(() => {
+                    // 获取到头的第一个字符
+                    var start = this.msg.substring(0,1)
+                    // 获取到后面的字符
+                    var end = this.msg.substring(1)
+                    // 重新拼接得到新的字符串，并赋值给
+                    this.msg = end + start
+
+                    }, 400);
+                },
+
+                stop(){
+                    clearInterval(this.intervalId)
+                    this.intervalId = null
+                }
+            }
+
+
+        })
+
+
+        
+
+
+        
+    
+    </script>
+
+</body>
+</html>

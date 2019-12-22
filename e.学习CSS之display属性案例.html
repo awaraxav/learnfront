@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>display属性的综合案例</title>
+    <style>
+        /*  第一步：通用的，清除HTML标签的默认的内填充(padding) 和外边距(margin)   */
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        /* 第二步：设置body标签的通用样式，此处是画个背景 */
+        body{
+            background-image: url(./image/list1.jpg);
+        }
+        /* 设置盒子大小，上下外边距为100px，左右居中 */
+        .nav{
+            width: 960px;
+            height: 40px;
+            margin:100px auto;
+        }
+        /* 第三步：去除默认列表的项目符号 */
+        ul{
+            list-style: none;
+        }
+         /* 第四步：设置li样式，将li浮动后排列 */       
+        .nav ul li{
+            /* 把每一个li标签向左浮动，效果是从左往右的并排展示 */
+            float: left;
+            /* 给每一个li设置一个宽度，因为浮动后已经脱离标准文档流，所以此处可以将行内元素设置宽度。 */
+            width: 120px;
+            height: 40px;
+            line-height: 40px;
+            /* 将文本在块中居中显示 */           
+            text-align: center;
+            background: url(./image/list4.png) repeat-x;
+        }
+
+        /* 第五步：将链接设置为块级元素，并设置宽高 */
+        .nav ul li a{
+            width: 120px;
+            height: 40px;
+            display: block;
+        }
+
+        /* 第六步：美化链接 */
+        .nav ul li a:link, .nav ul li a:visited{
+            text-decoration: none;
+            color:white;
+        }
+        .nav ul li a:hover{
+            background: url(./image/list5.png) repeat-x;
+        }
+
+
+    </style>
+    
+    
+</head>
+<body>
+    
+    <!-- 快捷写法：div.nav>ul>li*8>a{网站栏目} -->
+    <div class="nav">
+        <ul>
+            <li><a href="#">网站栏目</a></li>
+            <li><a href="#">网站栏目</a></li>
+            <li><a href="#">网站栏目</a></li>
+            <li><a href="#">网站栏目</a></li>
+            <li><a href="#">网站栏目</a></li>
+            <li><a href="#">网站栏目</a></li>
+            <li><a href="#">网站栏目</a></li>
+            <li><a href="#">网站栏目</a></li>
+        </ul>
+    </div>
+
+
+
+</body>
+</html>

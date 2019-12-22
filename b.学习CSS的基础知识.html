@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <!-- CSS的嵌入式写法：通常置于head内。注意：如果是HTML5,可省略 type 属性 -->
+    <style type="text/css">
+        /* CSS格式为： 选择器{属性1:值1; 属性2:值2;}  注意：1.属性的值一般不加引号，数值一般加单位 */
+        /* 注意：此处设置了所有div的两个默认属性 */
+        div {
+            width: 300px;
+            background: darkcyan;
+        }
+
+        /* 实例1：第一步给div设置边距，并且让div居中 */
+        .box {
+            width: 500px;
+            border: 1px solid #f00;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+
+        }
+        /* 实例1：第二步配置子元素h2 */
+        .box h2{
+            border: 1px solid skyblue;
+            height: 40px;
+            line-height: 40px;
+            color: #f00;
+            font-weight: normal;
+        }
+        /* 实例1：第三步配置子元素li */
+        .box li{
+            list-style-type: none;
+            height: 30px;
+            line-height: 30px;
+            border: 1px solid #ccc;
+            list-style-image: url(#);
+        }
+
+
+    </style>
+
+    <!-- CSS的外链式写法：置于head内，用link标签指向专门的CSS文件，注意：可以用多个link标签，引用多个CSS文件 -->
+    <!-- <link rel="stylesheet" href="css文件的路径"> -->
+    
+    
+
+
+</head>
+
+<body>
+
+    <div>
+        这是CSS的嵌入式写法，在head中写一个style。
+    </div>
+
+    <div style="width: 500px; background-color: gold;">
+        这是CSS的行内式的写法，利用style这个通用属性，在标签内直接使用，注意：行内式无需写选择器。
+    </div>
+
+
+    <!-- 1.CSS 有三类写法：嵌入式、外链式、行内式，如上所写的示例。 基本格式都是： 选择器{属性1:值1; 属性2:值2;} -->
+
+    <!-- 2.关于注释的说明：CSS中的注释写法是用 /* */(见style中的注释)，因此跟HTML中的注释要区分使用。  -->
+
+    <!-- 3.选择器有四类： 基本选择器、复合选择器、伪类选择器、属性选择器-->
+
+    <!-- 基本选择器之 通用选择器:  *{属性: 值;} 表示应用于所有html标签    -->
+
+    <!-- 基本选择器之 标签选择器:  标签名{属性: 值;} 表示应用于这个指定标签    -->
+
+    <!-- 基本选择器之 类选择器:  .class属性值{属性: 值;} 给拥有指定的class属性值的元素设置样式，注意：类选择器经常用。  -->
+
+    <!-- 基本选择器之 id选择器:  #id属性值{属性: 值;} 给拥有特定id的特定元素设置样式，注意：id值唯一。  -->
+
+    <!-- 复合选择器之 多元素选择器： 选择器1, 选择器2{属性: 值;}  同时匹配多个选择器。 常用    -->
+
+    <!-- 复合选择器之 后代元素选择器： 选择器1 选择器2{属性: 值;}  匹配 选择器1 所辖的所有 选择器2。 常用    -->
+
+    <!-- 复合选择器之 子元素选择器： 选择器1 > 选择器2{属性: 值;}  匹配 选择器1 所辖的所有下一级 选择器2。 少用    -->
+
+    <!-- 复合选择器之 相邻元素选择器： 选择器1 + 选择器2{属性: 值;}  匹配选择器1，以及选择器2紧邻在下的 元素。 少用
+        注意：选择器1和选择器2必须同一级，并且是紧邻关系，中间没有其他元素    -->
+
+    <!-- 复合选择器之 属性选择器，有五种形式： [attr]、[attr = 'val']、 [attr^='val']、[attr$='val']、[attr*='val']    -->
+
+    <!-- 4.尺寸样式属性： height(设置元素的高度)   width(设置元素的宽度)           -->
+
+    <!-- 5.文本属性：color(给文本设置颜色，#ff0000, red, rgb(3,5,8)),  text-align(设置文本水平对齐方向) -->
+    <!-- text-decoration(设置文本修饰线(上/下划线)), text-transform(大小写转换或首字母大写)             -->
+    <!-- line-height(设置行高), text-indent(设置首行缩进), letter-spacing(设置字符间距), word-spacing(设置单词间距)-->
+
+    <!-- 6.字体属性：font-style(设置文本为斜体),  font-weight(设置文本粗细), font-size(设置文本大小)    -->
+    <!-- font-family(设置文本字体),  font(简写属性，设置所有字体属性，注意有顺序要求)     -->
+
+    <!-- 7.列表样式属性：list-sytle-type(设置列表前项目符号的类型),  list-style-position(设置列表项标记的放置位置), list-style-image(将图像设置为列表项标记)   list-style(简写属性，在一个列表中设置所有列表属性，没有顺序要求) -->
+
+    <!-- 8.文本在一个盒子的垂直高度的方向上居中对齐: 可将高度（height）与行高(line-height)设置为一样    -->
+
+    <!-- 9.基于文本编辑器的快捷功能，快速书写：运用 >(表示上下级关系)，和 *（表示有几个）。例如 ur>li>a*5 -->
+    <!-- 以下为实例1 -->
+    <div class="box">
+    <h2>新闻频道</h2>
+    <ul>
+        <li><a href="#">测试样式</a></li>
+        <li><a href="#">测试样式</a></li>
+        <li><a href="#">测试样式</a></li>
+        <li><a href="#">测试样式</a></li>
+        <li><a href="#">测试样式</a></li>
+    </ul>
+    </div>
+
+    <!-- 10.基于文本编辑器的快捷功能，选中多个内容，同时书写：运用 1.ctrl + shift + L; 2.ctrl + D; 3. alt + 左键 -->
+
+    <!-- 11.伪类选择器：给超级链接的不同状态来设置样式（有顺序要求）  :link(正常状态), :visited(访问过), :hover（鼠标悬停）,  :active（激活状态） 。 例如:-->
+    <!-- <style>
+        a:link{
+            color: #f00;
+        }
+        a:visited{
+            color: #000;
+        }
+        a:hover{
+            color: gold;
+        }
+        a:active{
+            color: #0f0;
+        }
+    </style> -->
+
+    <!-- 12.实例2：常用的超级链接的美化：去掉正常/访问后状态的下划线，并设置颜色，鼠标悬停时变色并有下划线     -->
+    <!-- <style>
+        a:link, a:visited{
+            text-decoration: none;
+            color: #444;
+        }
+        a:hover{
+            color: gold;
+            text-decoration: underline;
+        }
+    </style> -->
+
+    <!-- 13.继承规则：外层元素的文本与字体属性，能够被内层元素继承，但内层元素也可重新定义该属性，进行覆盖。  实际工作中，通常给body标签设置字体大小及颜色。    -->
+
+    <!-- 14.选择器的优先级：行内样式(权重值1000) > id选择器(100) > 类选择器(10) > 标签选择器(1)          注意：多选择器的情况，就是将上述权重值相加。    -->
+
+    <!-- 15.!important属性：提升属性的权重值为无穷大。格式为  属性: 值 !important;    -->
+
+    <!-- 16.一个标签内多个类名：<标签名 class="类名1 类名2 ...">   这样写的好处是：减少css代码量     -->
+
+    <!-- 17.背景样式属性：background-color/image/repeat(背景图像是否重复)/postion/attachment。案例见c.学习CSS之背景样式属性案例.html -->
+
+    <!-- 18.标准文档流：从左至右，从上至下的原则。 注意：1.空白折叠现象：原因是书写html时的换行习惯，导致文字与文字、或图片与图片之间，都有一个空格。解决方法是：将这些元素放在同一行，紧密相连没有空格。 2.高矮不齐，底部对齐现象：原因时文字的大小和图片的大小不一致，导致虽然底部对齐，但是高矮不齐。 -->
+
+    <!-- 19.浮动(脱离标准文档流的方法)：实现让多个元素排在同一行，并能设置宽高。即浮动脱标后，使其既有行内元素特性，又有块级元素特性。 -->
+
+    <!-- 20.常用的排版注意事项：通常html自带默认的内填充(padding)和外边距(margin), 为了排版好看，应该首先在style中，利用通用选择器，将这些默认值清零。   -->
+
+
+    <!-- 21.清除浮动：需清除的原因是浮动的缺点有二，其一是可能影响下方元素的排版，其二是因为浮动元素容易超出父级元素边框 。 清除浮动的方式：1.clear； 2. overflow:hidden-->
+
+    <!-- 22.盒子模型：width/height(content的宽高), padding(填充), border, margin(外间距)。注意：1.一个盒子的高度是不用设置的，而是根据内容自动调整的； 2.小属性(top, right, bottom, left)是按上右下左的顺序;  3.margin只能实现盒子的居中(margin: 20px(上下) auto（左右）;)，要实现文本居中用(text-align: center;) ；  4.善于使用父元素的padding，而不是使用子元素的margin，因为margin通常描述的是平级元素中间的关系，而不擅长描述父子元素的关系。-->
+
+    <!-- 23.display属性的用法：实现行内元素和块级元素的转化。三类：display: inline(行内)/block(块级),none(隐藏);    其中，display在JS中的功能要是，让一个元素显示(block)或隐藏(none). -->
+
+    <!-- 24.块级和行内元素的区别：行内--与其他行内元素并排；不能设置宽高，默认的宽度就是文字的宽度。块级元素--霸占一行，不能与其他任何元素并列；能接受宽高，如果不设置宽度，那么宽度将默认变为父级的100%。 -->
+
+    <!-- 25.典型的块级和行内元素：行内--span, a, strong, em等；块级--div, h系列, li, dt, dd等 -->
+
+    <!-- 26.position属性定位：positon:fixed/relative/absolute; top/right/bottom/left: xxpx; 。   固定定位(position:fixed)相对与浏览器定位；   相对定位(relative)相对于原来的自己定位;   绝对定位(absolute)：相对于具有position定义的祖级元素(父/爷/..)进行定位：若父元素和爷元素都有position定义语句，那么仍相对于父元素定位；若没有找到任何有positon定义的祖级元素，那么就相对于body定位(即浏览器)，开发中，通常采用的模式是：子元素用绝对定位，父元素用相对定位。 -->
+
+    <!-- 27. z-index属性的作用：见 f 案例中的附加步骤。 -->
+
+    <!-- 28. 结构伪类选择器：first-child, last-child, nth-child(even), nth-child(odd)。应用场合：对于很多个li的列表场合，为了对其中某几个li进行样式编辑，可以用类似语句： .box ul li:first-child -->
+
+    <!-- 29. 小知识：为了便于调试，通常给块级元素设置一个边框属性。例如，border:1px solid #000 -->
+
+    <!-- 30. 选择器 ":first-letter/line" 操作当前元素中的一个字/行; "::before{content: "xxx"}" 在当前元素开头处插入content文字；  "::after{content: "xxx"}"在当前元素最后面插入content文字   -->
+
+    <!-- 31. 文本阴影属性：  text-shadow: 水平阴影a(px) 垂直阴影a(px) 模糊程度a(px) 阴影a的颜色, 水平阴影b 垂直阴影b 模糊程度b 阴影b的颜色;      注意：有多个阴影时，用逗号。   -->
+
+    <!-- 32. 盒子阴影属性：  box-shadow: 水平 垂直 模糊 大小 颜色 [位置] [outset(inset)];    []表示可选 -->
+
+    <!-- 33. 圆角矩形属性：常用矩形美化属性，以及画圆/椭圆/半圆的方法， border-radius: 左上(px) 右上 右下 左下;     -->
+
+    <!-- 34. 透明度属性：可对背景、文字、边框等设置透明度。例如 rgba(255,0,0,0.5)，为设置50%的透明度。注意，普通的颜色定义有三种方法：   #000/rgb(0,0,0)/black    -->
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./lib/vue2.6.10.js"></script>
+</head>
+
+<body>
+    <div id="app">
+
+        <!-- 这是不绑定的通用型普通方法（与Vue框架无关的） -->
+        <!-- <h1 style="color: red;">这是一个h1</h1> -->
+
+        <!-- 1.基于Vue中的v-bind 对sytle的指令 之 直接内联，注意：对象就是无序键值对的集合 -->
+        <h1 :style="{color: 'red', 'font-weight': 200}">这是一个h1</h1>
+
+        <!-- 2.基于Vue中的v-bind 对sytle的指令 之 样式对象定义在data中 -->
+        <h1 :style="styleObj1">这是一个h1</h1>
+
+        <!-- 3.基于Vue中的v-bind 对sytle的指令 之 通过数组引用data中的多个样式 -->
+        <h1 :style="[styleObj1, styleObj2]">这是一个h1</h1>
+
+
+    </div>
+
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                styleObj1: { color: 'red', 'font-weight': 200 },
+                styleObj2: { 'font-style': 'italic' }
+            },
+            methods: {
+
+            }
+        })
+    </script>
+</body>
+
+</html>

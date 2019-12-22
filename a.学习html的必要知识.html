@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- 1.html必备的标签有四个：html、head、head中的title、body。其中title是页面标签的标题 -->
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 2.熟记普通文本标签的功能（此处为语义化版本）：strong（加粗）、em（斜体）、del（删除线）、ins（下划线） -->
+
+    <!-- 3.标签属性的定义：  <标签名 属性1="值" 属性2="值2" ...> 内容 </标签名>        -->
+    <!-- 注意：采用的是键值对的格式：key = "value"； 标签可以有多个属性，属性之间不分顺序，以空格分开。 -->
+
+    <!-- 4.链接标签的用法：  <a href="跳转目标" target="目标窗口弹出方式"> 文本或图像 </a>         -->
+    <!-- 注意：如果暂时没有确定链接目标，可以 href="#";  弹出方式主要有两类：_self(默认)，_blank    -->
+
+    <!-- 5.锚点定位的用法：  第一步： <a href="#锚点名"> 链接文本 </a> ；第二步，使用相应的锚点名，用id属性标注跳转位置：<某标签 id = "ID名">  -->
+
+    <!-- 6.单标签总结：img, br(换行), hr(画一条水平线), base(为页面上的所有链接规定默认地址或默认打开方式，置于head标签中) -->
+
+    <!-- 7.特殊字符： 空格(&nbsp;), 小于(&lt;), 大于(&gt;)     -->
+
+    <!-- 8.相对路径： '..'表示上一级文件夹，'../../'表示上两级文件夹 -->
+
+    <!-- 9.列表标签之无序列表:  注意：<ul>内的第一层嵌套只能放置<li>，而<li>中相当于容器，可以容纳所有元素
+    <ul> 
+        <li>内容1</li>  
+        <li>内容2</li> 
+    </ul>      -->
+
+    <!-- 10.列表标签之有序列表:  注意：<ol>内的第一层嵌套只能放置<li>，而<li>中相当于容器，可以容纳所有元素。
+    <ol> 
+        <li>内容1</li>  
+        <li>内容2</li> 
+    </ol>      -->
+
+    <!-- 11.列表标签之自定义列表:  注意：<dl>内的第一层嵌套只能放置一个<dt>及多个<dd>, 自定义列表通常置于网页底部。-->
+    <!-- <dl> 
+        <dt>主分支a</dt>
+        <dd>分支a的说明1</dd>  
+        <dd>分支a的说明2</dd> 
+
+        <dt>主分支b</dt>
+        <dd>分支b的说明1</dd>  
+        <dd>分支b的说明2</dd>        
+    </ol>       -->
+
+    <!-- 12.表格： -->
+    <table width="500" height="300" border="1px" cellspacing="0px" cellpadding="0px" align="center">
+        <!-- 表格的标题 -->
+        <caption>个人基本信息表</caption>
+        <!-- 表头区域 -->
+        <thead>
+            <!-- 表头的行 -->
+            <tr>
+                <!-- 单元格: th是表头，td是普通单元格 -->
+                <th>姓名</th>
+                <th>性别</th>
+                <th>年龄</th>
+            </tr>
+        </thead>
+        <!-- 主体区域 -->
+        <tbody>
+            <!-- 主体的行 -->
+            <tr>
+                <!-- 单元格: th是表头，td是普通单元格 -->
+                <td>小a</td>
+                <td>男</td>
+                <!-- 跨行合并第一步：rowspan="合并单元格总数" -->
+                <td rowspan="2">10</td>
+                <!-- <td>10</td> -->
+            </tr>
+            <tr>
+                <td>小b</td>
+                <td>女</td>
+                <!-- 跨行合并第二步：删除被合并单元格。此外，跨列合并类似(colspan) -->
+                <!-- <td>10</td> -->
+            </tr>
+
+        </tbody>
+
+    </table>
+
+    <!-- 13.表单：三部分构成 表单域(容器)、提示信息(说明性文字) 、表单控件(输入框、复选、提交、重置...)-->
+
+    <!-- 表单域 -->
+    <form action="xxx.php" method="GET" name="userMessage">
+        <!-- 表单控件：input的type属性 text(文本)、password(密码)、radio(单选) -->
+        用户名：<input type="text" value="此处是默认用户名">
+        <br>
+        密　码：<input type="password" maxlength="6">
+        <br>
+        <!-- 指定同一个name后，单选框只能选中一个，默认选项用checked属性 -->
+        性　别：<input type="radio" name="sex" checked="checked">女 <input type="radio" name="sex">男
+        <br>
+        <!-- 指定同一个name后，复选框仍可选中多个，不受影响 -->
+        爱　好：<input type="checkbox" name="hobby">足球 <input type="checkbox" name="hobby">篮球 <input type="checkbox"
+            name="hobby">乒乓球
+        <br>
+        普通按钮：<input type="button" value="搜索">
+        <br>
+        提交按钮：<input type="submit">
+        <br>
+        重置按钮：<input type="reset">
+        <br>
+        图像按钮：<input type="image" src="./image/absolut1.png">
+        <br>
+        文件按钮：<input type="file">
+        <br>
+        <!-- label标签的使用技巧，用label包裹文字和控件，点击文字时就可以实现点击控件的效果 -->
+        <label for="two">
+            用户名：<input type="text"> <input type="text" id="two">
+        </label>
+        <br>
+        <!-- 文本域 -->
+        <textarea>请输入留言</textarea>
+        <br>
+        <!-- 下拉菜单 -->
+        籍贯：
+        <select>
+            <option>点击选择你的籍贯</option>
+            <option>上海</option>
+            <option>广州</option>
+            <option>星星</option>
+            <!-- 可设置默认选项 -->
+            <option selected="selected">太阳</option>
+        </select>
+    </form>
+
+    <!-- 14 HTML5特有的标签： -->
+    <!-- 14.1 HTML5特有的标签： -->
+
+    <header>定义页面的头部，页眉</header>
+    <nav>定义导航栏</nav>
+    <footer>定义页面底部，页脚</footer>
+    <article>定义文章</article>
+    <section>定义区域</section>
+    <aside>定义侧边</aside>
+
+    <!-- 14.2 datalist标签定义选项列表，一般与input配合使用。注意：input里面用list和datalist中的id 相互衔接 -->
+    <input type="text" value="输入明星" list="star">
+    <datalist id="star">
+        <option>刘德华</option>
+        <option>刘德华</option>
+        <option>刘德华</option>
+    </datalist>
+
+    <br><br><br>
+    <!-- 14.3 fieldset可将表单内的相关元素分组打包，配合legend使用 -->
+    <fieldset>
+        <legend>用户登录</legend>
+        用户名：
+    </fieldset>
+
+    <br>
+    <!-- 14.4 input的 H5 部分新type介绍（用fieldset来配合进行展示） -->
+    <fieldset>
+        <legend>HTML5 新增的INPUT TYPE</legend>
+        <form action="">
+            邮箱：<input type="email"> <br>
+            手机：<input type="tel"> <br>
+            数字：<input type="number"> <br>
+            url: <input type="url"> <br>
+            搜索：<input type="search"> <br>
+            区域：<input type="range"> <br>
+            时间：<input type="time"> <br>
+            年月日： <input type="date"> <br>
+            年月： <input type="month"> <br>
+            年周： <input type="week"> <br>
+            颜色： <input type="color"> <br>
+            <input type="submit">
+        </form>
+    </fieldset>
+
+    <!-- 14.5 input的 H5 部分新属性介绍（用fieldset来配合进行展示） -->
+    <fieldset>
+        <legend>HTML5 新增的INPUT 属性</legend>
+        用户名（常见的提示文本形式 + 自动定位光标）：<input type="text" placeholder="请输入用户名" autofocus>
+
+        <br>
+        上传多个文件用multiple：<input type="file" multiple>
+        <br>
+
+        自动补填功能：<br> 1.应在表单之中使用 <br> 2.需要有submit按钮 <br> 3.表单对象必须定义name
+        <form action="">
+            自动补填功能举例(公共场合用off)：<input type="text" autocomplete="on" name="userName">
+            <input type="submit">
+        </form>
+
+        <br>
+        内容不能为空：<input type="text" required>
+        <br>
+
+        获得焦点(alt+s快捷键快速定位光标)：<input type="text" accesskey="s">
+    </fieldset>
+
+    <br>
+    <!-- 15 多媒体：embed, audio, video -->
+    <!-- 15.1 -->
+    <!-- 为了音/视频在不同浏览器的兼容性，一般是采用两个格式文件 -->
+    <!-- autoplay是打开后自动播放，controls是显示控制台，loop为-1表示循环播放 -->
+    <!-- height/width可设置图像长宽 -->
+    <video autoplay controls loop="-1" width="800">
+        <source src="./video/2_IntroduceCSharp.ogg">
+        <source src="./video/2_IntroduceCSharp.mp4">
+        您的浏览器不支持HTML视频播放功能
+    </video>
+    <!-- 15.2 -->
+    <!-- embed直接从优酷等视频的分享页面上复制HTML分享链接 -->
+    <!-- 15.3     audio的用法类似video -->
+
+</body>
+
+</html>

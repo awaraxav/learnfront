@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!--1.导入Vue的包-->
+    <script src="./lib/vue2.6.10.js"></script>
+    <style>
+        .inner{
+            height: 150px;
+            background-color: darkcyan
+        }
+
+        .outer{
+            padding: 40px;
+            background-color: red
+        }
+
+    </style>
+
+</head>
+<body>
+    <!-- 2. 创建一个要控制的区域 -->
+    <div id="app">
+
+         <!-- A: 使用 .stop 阻止冒泡， 在需要阻止的 div 中运用 -->
+        <div class="inner" @click="div1Handler">
+            <input type="button" value="戳他" @click.stop="btnHandler">
+        </div>
+    
+        <!-- B: 使用 .prevent 阻止默认行为
+        <a href="http://www.baidu.com" @click.prevent="linkClick">有问题，先去百度</a> -->
+
+         <!-- C: 使用 .capture 实现捕获触发事件的机制，在需要实现捕获的最外层div中运用
+        <div class="inner" @click.capture="div1Handler">
+            <input type="button" value="戳他" @click="btnHandler">
+        </div> -->
+
+         <!-- D: 使用 .self 实现只有点击当前元素的时候（而非冒泡机制或捕获机制触发时），才会触发事件处理函数
+        <div class="inner" @click.capture="div1Handler">
+            <input type="button" value="戳他" @click="btnHandler">
+        </div> -->
+
+        <!-- e: 使用 .once 只触发一次事件处理函数
+        <a href="http://www.baidu.com" @click.prevent.once="linkClick">有问题，先去百度</a> -->
+
+        <!-- F: .stop 和 .self 的运用，都能阻止冒泡，但是区别在于 .self 只阻止自己身上的冒泡，但不能真正阻止冒泡
+        <div class="outer" @click="div2Handler">
+            <div class="inner" @click.self="div1Handler">
+                    <input type="button" value="戳他" @click="btnHandler">
+            </div>
+        </div> -->
+
+    </div>
+
+    <script>
+        // 3.创建一个Vue的实例
+        //   当我们导入Vue的包之后，在浏览器的内存中就多了一个 Vue 的构造函数
+        var vm = new Vue({
+            el: '#app',  // 表示，当前我们 new 的这个 Vue 的实例，要控制页面上的哪个区域。
+            data: {     // data 属性中，存放的是 el 中要用到的数据
+            },
+            methods: {
+                div1Handler(){
+                    console.log("这是触发了 inner div 的点击事件")
+                },
+                btnHandler(){
+                    console.log("这是触发了 btn 按钮 的点击事件")
+                },
+                linkClick(){
+                    console.log("这是触发了 链接 的点击事件")
+                },
+                div2Handler(){
+                    console.log("这是触发了 outer div 的点击事件")
+                },
+            }
+
+        })
+    </script>
+</body>
+</html>

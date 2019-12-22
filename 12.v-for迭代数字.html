@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!--1.导入Vue的包-->
+    <script src="./lib/vue2.6.10.js"></script>
+</head>
+<body>
+    <!-- 2. 创建一个要控制的区域 -->
+    <div id="app">
+
+        <!-- v-for中的in后面，可以放置 普通数组、对象数组、对象，还可以放置数字。 -->
+        <!-- 注意：count值从 1 开始 -->
+        <p v-for="count in 10">这是第 {{count}} 次循环</p>
+
+    </div>
+
+    <script>
+        // 3.创建一个Vue的实例
+        //   当我们导入Vue的包之后，在浏览器的内存中就多了一个 Vue 的构造函数
+        var vm = new Vue({
+            el: '#app',  // 表示，当前我们 new 的这个 Vue 的实例，要控制页面上的哪个区域。
+            data: {     // data 属性中，存放的是 el 中要用到的数据
+            },
+            methods: {}
+
+        })
+    </script>
+</body>
+</html>
