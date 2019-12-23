@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>CSS综合案例1</title>
     <style>
         body{
             font-size: 16px;
+            /* 一般网页不用纯黑，用淡灰色 */
             color: #3c3c3c;
         }
         h1{
@@ -19,14 +20,33 @@
             text-align: center;
             font-size: 14px;
         }
+        .sports {
+            color: #f40;
+        }
+        .pactake{
+            color: #f00;
+        }
+        .collect{
+            font-weight: 700;
+            color: #ccc;
+        }
+        /* 链接伪类选择器，此处是将class与伪类结合起来的用法 */
+        .collect:hover{
+            color: #f00;
+        }
         p{
+            font-size: 14px;
+            line-height: 22px;
+            /* 首行缩进2个汉字 */
             text-indent: 2em;
+            /* 字间距 */
+            letter-spacing: 1px;
         }
     </style>
 </head>
 <body>
     <h1>中乙队赛前突然换帅仍胜毅腾 高原黑马欲阻击舜天</h1>
-    <div>2014年07月16日20:11  新浪体育 <a href="#" class="pactake">我有话说(195人参与)</a> <a href="#" class=""> 收藏本文</a></div>
+    <div>2014年07月16日20:11  <span class="sports">新浪体育</span> <a href="#" class="pactake">我有话说(195人参与)</a> <a href="#" class="collect"> 收藏本文</a></div>
     <hr>
     <p>新浪体育讯　7月16日是燕京啤酒2014中国足协杯第三轮比赛，丽江嘉云昊队主场迎战哈尔滨毅腾队的比赛日。然而就在比赛日中午，丽江嘉云昊队主帅李虎和另外两名成员悄然向俱乐部提出了辞呈，并且收拾行囊准备离开。在这样的情况下，丽江嘉云昊队不得不由此前的教练员杨贵东代理指挥了本场比赛。</p>
 
